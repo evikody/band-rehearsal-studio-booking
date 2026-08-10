@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: studio_user
+      POSTGRES_PASSWORD: studio_pass
+      POSTGRES_DB: studio_booking
+    ports:
+      - "5432:5432"
+    volumes:
+      - studio_pg_data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./backend
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://studio_user:studio_pass@postgres:5432/studio_booking
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+
+volumes:
+  studio_pg_data:
