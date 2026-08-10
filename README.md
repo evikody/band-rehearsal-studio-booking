@@ -12,7 +12,7 @@ architecture decisions made so far.
 ## Planned features
 
 **Customers**
-- Browse studios, view info and pricing
+- Browse studio, view info and pricing
 - View available schedules and book a slot (date, time, duration)
 - Receive booking confirmation
 - Double-booking is prevented at the database level
@@ -20,7 +20,7 @@ architecture decisions made so far.
 **Admins**
 - Log in securely
 - View, approve, reject, and cancel bookings
-- Manage studio rooms, schedules, and prices
+- Manage studio room, schedules, and prices
 - View booking history
 
 ## Tech stack
